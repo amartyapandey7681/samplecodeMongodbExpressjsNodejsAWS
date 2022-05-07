@@ -48,3 +48,15 @@ let obj = [{
       }
     }
   }
+
+
+  //it outputs a code having 
+  /*
+    if curl -s "url_to_test" | grep "No Data Found"
+        then
+        echo url_to_test >>final.txt
+        fi
+
+        //it will check if html returned has "No Data Found"
+        world in it or not
+        */
