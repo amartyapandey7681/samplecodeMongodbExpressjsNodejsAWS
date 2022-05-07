@@ -1,0 +1,33 @@
+collection.aggregate(
+        [
+            {
+                $match :{
+                    
+                    $and :[ {field1 : {$ne : "value1"}},
+                            {field2 : {$gte : new Date()}},
+                            { field3: { $in: [ "v1",
+                            "v2",
+                            "v3",
+                            "v4" ] }}
+                    ]
+                }
+            },
+            {
+            $lookup :{
+                from : "coll2",
+                localField : "maincoll_field",
+                foreignField : "coll2_field",
+                as : "name1"
+            }},
+            {
+            $lookup :{
+                from : "coll3",
+                localField : "maincoll_field",
+                foreignField : "coll3_field",
+                as : "name2"
+            }},{
+            $project:{
+                _id:0,
+                //add feilds to be projected
+        }
+    ])
