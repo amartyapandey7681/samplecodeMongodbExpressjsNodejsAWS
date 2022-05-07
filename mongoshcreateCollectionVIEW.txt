@@ -1,0 +1,6 @@
+db.createView("viewName",
+    "collectionname",
+    [ { $project: {  
+        //normal projection
+    } } ]
+)
