@@ -1,0 +1,11 @@
+db.adminCommand({ createRole: "ole_name",
+  privileges: [
+    { resource: { db: "dbname", collection: "" }, actions: [ "find"] },
+    { resource: { db: "dbname", collection: "coll1" }, actions: [ "listCollections"] },
+    { resource: { db: "dbname", collection: "coll2" }, actions: [ "listCollections" ] }
+  ],
+  roles: [
+    { role: "read", db: "dbname" }
+  ],
+  writeConcern: { w: "majority" , wtimeout: 5000 }
+})
