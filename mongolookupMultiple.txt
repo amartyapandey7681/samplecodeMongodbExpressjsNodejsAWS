@@ -31,3 +31,13 @@ collection.aggregate(
                 //add feilds to be projected
         }
     ])
+
+
+    // syntax for unwind
+
+    {
+            "$unwind": {
+                "path": "$datafieldname",
+                "preserveNullAndEmptyArrays": true
+            }
+    }
