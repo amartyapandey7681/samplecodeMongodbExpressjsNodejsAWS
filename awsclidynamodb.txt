@@ -1,0 +1,15 @@
+echo 'aws cli should be installed ..... '
+
+
+echo 'Querying AWS dynamoDB table-name table'
+
+aws dynamodb scan \
+    --table-name sample-table \
+    --filter-expression 'attribute_exists(#t)' \
+    --projection-expression '#t' \
+    --expression-attribute-names '{
+        "#t" : "nameofAttribute"
+    }' >> tokenpresent11.json
+
+echo 'Querying Done raw json present in tokenpresent11.json'
+    
